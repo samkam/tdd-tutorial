@@ -3,9 +3,7 @@ from selenium.webdriver.firefox.options import Options
 import unittest
 class NewVisitorTest(unittest.TestCase):
 	def setUp(self):
-		opts = Options()
-		#opts.log.level = "trace"
-		self.browser = webdriver.Firefox(options=opts)
+		self.browser = webdriver.Firefox()
 	def tearDown(self):
 		self.browser.quit()
 
