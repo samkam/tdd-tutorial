@@ -1,5 +1,6 @@
 TODO:
--test_saving_and_retreiving_items is too long. refactor
+-adjust model so that multiple lists exists
+-have unique URL for each list
+-add URL for creating a new list via post
+-add URL for adding new item to a list via a post
 -home_page view will save empty string to Items table if no text was entered.
--NewVisitor test story permanently writes to development database
--should have multiple lists (per user)
