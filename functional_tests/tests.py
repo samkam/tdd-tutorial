@@ -4,7 +4,7 @@ from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.keys import Keys
 import unittest
 import time
-MAX_WAIT = 10
+MAX_WAIT = 4
 class NewVisitorTest(LiveServerTestCase):
 	def setUp(self):
 		self.browser = webdriver.Firefox()
@@ -78,14 +78,14 @@ class NewVisitorTest(LiveServerTestCase):
 		
 		# a new user Francis comes to the site
 		
-		##we use a new broswer sessison to make sure that no information 
+		##we use a new browser sessison to make sure that no information 
 		## of Edith's is coming through from cookies etc
-		self.broswer.quit()
+		self.browser.quit()
 		self.browser = webdriver.Firefox()
 		
 		# Francis visits the home page. There is no sign of Ediths' list
-		self.broswer.get(self.live_server_url)
-		page_text = self.broswer.find_element_by_tag_name('body').text
+		self.browser.get(self.live_server_url)
+		page_text = self.browser.find_element_by_tag_name('body').text
 		self.assertNotIn('Buy peacock feathers', page_text)
 		self.assertNotIn('make a fly', page_text)
 		
@@ -101,7 +101,7 @@ class NewVisitorTest(LiveServerTestCase):
 		self.assertNotEqual(francis_list_url, edith_list_url)
 		
 		#no traces of Edith's lists
-		page_text = self.broswer.find_element_by_tag_name('body').text
+		page_text = self.browser.find_element_by_tag_name('body').text
 		self.assertNotIn('Buy peacock feathers', page_text)
 		aself.assertIn('Buy milk', page_text)
 		# they both go to sleep
