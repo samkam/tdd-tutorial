@@ -6,3 +6,4 @@ virtualenv
 __pycache__
 etc/*
 lists/migrations/*
+static/*
