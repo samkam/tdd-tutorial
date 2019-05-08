@@ -22,12 +22,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 
 #with open('etc\secret_key.txt') as f:
-SECRET_KEY = 'dev'#f.read().strip()
+#SECRET_KEY = 'dev'#f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
+if 'DJANGO_DEBUG_FALSE' in os.environ:
+	DEBUG = False
+	SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+	ALLOWED_HOSTS = [os.environ['SITENAME']]
+else:
+	DEBUG = True
+	SECRET_KEY = 'dev'
+	ALLOWED_HOSTS = []
 
 
 # Application definition
