@@ -7,3 +7,4 @@ __pycache__
 etc/*
 lists/migrations/*
 static/*
+deploy_tools/run_fabric.sh
