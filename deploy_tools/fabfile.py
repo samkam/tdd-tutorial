@@ -39,4 +39,5 @@ def _update_static_files():
 	run('./virtualenv/bin/python manage.py collectstatic --noinput')
 
 def _update_database():
+	run('./virtualenv/bin/python manage.py makemigrations --noinput')
 	run('./virtualenv/bin/python manage.py migrate --noinput')
