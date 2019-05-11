@@ -13,3 +13,7 @@ sudo apt install nginx git python36 python3.6-venv
 * see nginx.template.conf
 * find replace DOMAIN w/ real domain name
 
+## systemd Service
+* see gunicorn-systemd.template.service
+* replace DOMAIN with, eg.g, staging.my-domain.com
+
