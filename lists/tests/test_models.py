@@ -32,7 +32,7 @@ class ListAndItemModelTest(TestCase):
 		list_ = List.objects.create()
 		blank_item = Item(list=list_, text="")
 		with self.assertRaises(ValidationError):
-			blank_item.save()
 			blank_item.full_clean()
-	
+			blank_item.save()
+		self.assertEqual(Item.objects.count(),0)
 	
